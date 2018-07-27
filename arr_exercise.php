@@ -204,15 +204,12 @@ Array
 //     if(($k+1)%3==0){
 //         $r['sex'] = $v;
 //         $r2[] =$r;
-//         continue;
 //     }
 //     if(($k+1)%3==1){
 //         $r['name'] = $v;
-//         continue;
 //     }
 //     if(($k+1)%3==2){
 //         $r['age'] = $v;
-//         continue;
 //     }    
 // }
 // print_r($r2);
