@@ -1,0 +1,32 @@
+<?php
+include 'public/utils.php';
+class WeiXin{
+    private function checkSignnature(){
+        //获取参数
+        $signature = $_GET["signature"];
+        $timestamp = $_GET["timestamp"];
+        $nonce = $_GET["nonce"];
+        $token = 'aiyouwoqushehuiyao';
+        $tmpArr = [$timestamp, $nonce,$token];
+        sort($tmpArr, SORT_STRING);
+        $tmpStr = implode($tmpArr);
+        $tmpStr = sha1($tmpStr);
+    
+        if ($signature==$tmpStr) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function returnEchoStr(){
+        if($this->checkSignnature()){
+            echo $_GET['echostr'];
+        }
+    }
+}
+
+// $obj = new WeiXin;
+// $obj->returnEchoStr();
+
+file_put_contents('./info.log',);

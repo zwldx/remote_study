@@ -48,3 +48,30 @@ function getPost($url,$vars){
     curl_setopt_array($ch, $params); //传入curl参数
     return  curl_exec($ch); //执行
 }
+
+//数组转xml
+function ArrToXml($arr)
+{
+	if(!is_array($arr) || count($arr) == 0) return '';
+	
+	$xml = "<xml>";
+	foreach ($arr as $key=>$val)
+	{
+		if (is_numeric($val)){
+			$xml.="<".$key.">".$val."</".$key.">";
+		}else{
+			$xml.="<".$key."><![CDATA[".$val."]]></".$key.">";
+		}
+	}
+	$xml.="</xml>";
+	return $xml; 
+}
+	
+//Xml转数组
+function XmlToArr($xml)
+{	
+	if($xml == '') return '';
+	libxml_disable_entity_loader(true);
+	$arr = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);		
+	return $arr;
+}
