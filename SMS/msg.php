@@ -1,8 +1,8 @@
 <?php
 date_default_timezone_set('GMT');  //设置默认时区
-$appid = "LTAIQ4tsbfsM2ur2";
-$secret = "";
-$TemplateCode = 'SMS_142389494';
+$appid = "xxx";
+$secret = "xxx";
+$TemplateCode = 'xxx';
 
 $params = [
 	//-------系统参数---------
@@ -18,8 +18,8 @@ $params = [
 	 'Action'    => 'SendSms',
 	 'Version'   => '2017-05-25',
 	 'RegionId'  => 'cn-hangzhou',
-	'PhoneNumbers' => '18811015437',  //手机号
-	'SignName' => '张文龙',   //签名
+	'PhoneNumbers' => 'xxx',  //手机号
+	'SignName' => 'xxx',   //签名
 	'TemplateCode' => $TemplateCode, // 模板id
 	'TemplateParam' => json_encode(['code' => 'zwldx5']), //模板替换变量  验证码
 ];
