@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('GMT');  //设置默认时区
 $appid = "LTAIQ4tsbfsM2ur2";
-$secret = "1pMYFTs6W3Zhl4sOPCT5kcowAWvf7O";
+$secret = "";
 $TemplateCode = 'SMS_142389494';
 
 $params = [
